@@ -13,43 +13,59 @@ const SCHOOL_CONFIG = {
   foundedYear: 2019,
   dvlaAccreditation: "DVLA Certified Driving School #DVLA/TR/ACC-0482",
   
-  // Contact Information (Ghana format - Unified 0243854314)
+  // Contact Information (Ghana format - 0243854314 / 0555652433)
   phone: "+233243854314",
-  phoneSecondary: "+233243854314",
+  phoneSecondary: "+233555652433",
   phoneDisplay: "0243 854 314",
-  phoneSecondaryDisplay: "0243 854 314",
+  phoneSecondaryDisplay: "0555 652 433",
   phoneIntl: "+233243854314",
+  contactLines: "0243854314 / 0555652433",
   
   // WhatsApp Configuration (Digits only with international country code)
   whatsappNumber: "233243854314",
   whatsappDisplay: "0243 854 314",
   defaultWhatsAppMessage: "Hello Intensive Driving Institute, I would like to make an inquiry about your driving courses and available lesson slots. Please provide more details.",
   
-  // Email & Physical Location
+  // Email & Physical Location (Official flyer: INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija, Off Mallam-Kasoa Road, Accra)
   email: "admissions@intensivedrivinggh.com",
   infoEmail: "info@intensivedrivinggh.com",
+  website: "www.intensivedrivinginstitute.com",
   address: {
-    street: "Weija DVLA, SSNIT First Floor",
-    landmark: "SSNIT Office Building, 1st Floor (Adjacent to Weija DVLA Office)",
+    street: "INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija",
+    landmark: "Off Mallam-Kasoa Road, Accra",
+    full: "INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija, Off Mallam-Kasoa Road, Accra",
     city: "Accra",
     region: "Greater Accra Region",
-    country: "Ghana",
-    postalCode: "GS-0145-8821"
+    country: "Ghana"
   },
   
-  // Operating Hours
+  // Official Working Hours
   hours: {
-    weekdays: "Monday – Friday: 6:30 AM – 6:30 PM",
-    saturdays: "Saturday: 7:00 AM – 5:00 PM",
-    sundays: "Sunday: Special Weekend Practice (By Appointment)",
-    theoryClasses: "Wednesdays & Saturdays (Flexible Virtual & Physical sessions)"
+    weekdays: "Monday – Friday: 8:00 AM – 5:00 PM",
+    saturdays: "Saturday: 8:00 AM – 5:00 PM",
+    sundays: "Sunday: Practical sessions by appointment (Sunday Course GH₵ 20.00 Optional)",
+    theoryClasses: "9:00 AM – 10:00 AM / 1:00 PM – 2:00 PM"
+  },
+
+  // Official Requirements for Registration
+  registrationRequirements: {
+    passportPhotos: "1 Passport size picture",
+    nationalId: "National ID (Ghana Card) ONLY",
+    educationLevel: "Level of Education: M.S.L.C, J.H.S, S.H.S (If necessary)",
+    registrationAndPamphletFee: 100
+  },
+
+  // Official Policies
+  policies: {
+    nonRefundable: "Fees paid are not refundable",
+    fuelIncrementNotice: "The above prices are subject to change should there is any government increment of fuel"
   },
   
   // Strategic Training & Pick-Up Locations (Accra)
   pickupLocations: [
     {
-      name: "Weija DVLA & SSNIT Hub",
-      description: "Direct walk-in and training hub at Weija DVLA, SSNIT First Floor."
+      name: "GICEL Estates & Weija Hub",
+      description: "Direct walk-in and training hub at INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija."
     },
     {
       name: "Mallam Junction & McCarthy Hill",
@@ -74,252 +90,101 @@ const SCHOOL_CONFIG = {
     twitter: "https://twitter.com/intensivedriving"
   },
   
-  // Pricing Structure (Editable in GH₵)
+  // Official Pricing Structure Matching Official Enquiry Form
   pricing: {
-    nonStudents: [
+    registrationAndPamphlet: 100,
+
+    dvlaDirectFees: [
       {
-        id: "reg-no-lic",
-        name: "Regular Course (Without License)",
-        category: "Regular (Non-Student)",
-        duration: "6 Weeks",
-        sessions: "18 Practical Lessons + Theory",
-        price: 2300,
-        currency: "GH₵",
-        features: [
-          "Manual or Automatic vehicle training",
-          "Comprehensive Ghana Highway Code theory",
-          "Dual-control safety vehicles",
-          "Flexible weekday or weekend schedule",
-          "Pick-up options from Weija & across Accra",
-          "Course completion certificate"
-        ],
-        popular: false
+        id: "dvla-standard",
+        name: "Standard License & Eye Test",
+        duration: "3 Months",
+        fee: 795,
+        payableAt: "DVLA",
+        description: "Standard processing timeline for genuine DVLA driver's license and mandatory optical evaluation."
       },
       {
-        id: "reg-std-lic",
-        name: "Regular Course + Standard License",
-        category: "Regular (Non-Student)",
-        duration: "6 Weeks",
-        sessions: "18 Practical Lessons + DVLA Process",
-        price: 2950,
-        currency: "GH₵",
-        features: [
-          "Full 6-Week driving instruction",
-          "DVLA Biometric registration assistance",
-          "DVLA Computerized Theory prep & mock tests",
-          "In-traffic driving test facilitation",
-          "70% Initial Deposit acceptable",
-          "DVLA Certified Driving License"
-        ],
-        popular: true
-      },
-      {
-        id: "reg-prem-lic",
-        name: "Regular Course + Premium License",
-        category: "Regular (Non-Student)",
-        duration: "6 Weeks",
-        sessions: "22 Practical Lessons + VIP Express DVLA",
-        price: 3200,
-        currency: "GH₵",
-        features: [
-          "Extended highway & nighttime driving practice",
-          "Priority one-on-one instructor matching",
-          "Expedited DVLA queue facilitation",
-          "Dedicated DVLA road test escort",
-          "Free refresher test day session",
-          "Zero-stress licensing guarantee"
-        ],
-        popular: false
-      },
-      {
-        id: "exp-no-lic",
-        name: "Express Course (Without License)",
-        category: "Express (Fast-Track)",
+        id: "dvla-premium",
+        name: "Premium License & Eye Test",
         duration: "3 Weeks",
-        sessions: "Daily Intensive Lessons (15 Hours)",
-        price: 2700,
-        currency: "GH₵",
-        features: [
-          "Fast-track intensive daily training",
-          "Ideal for travelers & busy executives",
-          "Comprehensive parking & highway maneuvers",
-          "Manual or Automatic transmission",
-          "Free theory materials & revision booklet"
-        ],
-        popular: false
-      },
-      {
-        id: "exp-std-lic",
-        name: "Express Course + Standard License",
-        category: "Express (Fast-Track)",
-        duration: "3 Weeks",
-        sessions: "Daily Intensive + DVLA Processing",
-        price: 3350,
-        currency: "GH₵",
-        features: [
-          "Full 3-week fast-track practical mastery",
-          "DVLA learner permit + official registration",
-          "Priority test booking with DVLA examiners",
-          "70% flexible deposit to kickstart training",
-          "Dedicated driving instructor"
-        ],
-        popular: false
-      },
-      {
-        id: "exp-prem-lic",
-        name: "Express Course + Premium License",
-        category: "Express (Fast-Track)",
-        duration: "3 Weeks",
-        sessions: "VIP Fast-Track + Express License",
-        price: 3600,
-        currency: "GH₵",
-        features: [
-          "All-inclusive expedited driving program",
-          "Priority car booking & home pickup options",
-          "Fast-track DVLA eye & biometric tests",
-          "Full in-traffic test mock drills",
-          "Official DVLA driver's license included"
-        ],
-        popular: false
-      },
-      {
-        id: "pol-no-lic",
-        name: "Polishing / Refresher (No License)",
-        category: "Refresher",
-        duration: "2 - 4 Weeks",
-        sessions: "10 Dedicated Practical Hours",
-        price: 1800,
-        currency: "GH₵",
-        features: [
-          "Targeted confidence-building on Accra roads",
-          "Highway driving (N1 & Motorway)",
-          "Reverse, parallel and tight space parking",
-          "Overcoming driving anxiety after accidents",
-          "Flexible custom scheduling"
-        ],
-        popular: false
-      },
-      {
-        id: "pol-lic",
-        name: "Polishing + Standard License",
-        category: "Refresher",
-        duration: "2 - 4 Weeks",
-        sessions: "10 Practical Hours + License",
-        price: 2450,
-        currency: "GH₵",
-        features: [
-          "10 Hours customized refresher lessons",
-          "Official DVLA licensing facilitation",
-          "Full preparation for the DVLA practical test",
-          "DVLA test vehicle accompaniment"
-        ],
-        popular: false
+        fee: 1055,
+        payableAt: "DVLA",
+        description: "Expedited processing timeline for accelerated license issuance and eye test."
       }
     ],
-    students: [
+
+    courses: [
       {
-        id: "stu-reg-no-lic",
-        name: "Student Regular (Without License)",
-        category: "Student / NSS Special",
-        duration: "6 Weeks",
-        sessions: "18 Practical Lessons (Flexible around lectures)",
-        price: 2100,
+        id: "regular-course",
+        name: "Regular Course",
+        duration: "1 Month 3 Weeks",
+        theoryTime: "9:00 AM – 10:00 AM or 1:00 PM – 2:00 PM",
+        practical: "Practical Driving Lessons included",
+        amountStandard: 1720,
+        amountComfort: 2220,
         currency: "GH₵",
-        discountNote: "Save GH₵ 200 with valid Student/NSS ID",
         features: [
-          "Free pickup from TF, Pent & Bani Hostels",
-          "Flexible hours around lecture schedules",
-          "Manual or Automatic vehicle choices",
-          "Comprehensive Highway Code theory",
-          "Pay 70% deposit (GH₵ 1,470) to begin"
-        ],
-        popular: false
-      },
-      {
-        id: "stu-reg-std-lic",
-        name: "Student Regular + License",
-        category: "Student / NSS Special",
-        duration: "6 Weeks",
-        sessions: "18 Practical Lessons + DVLA License",
-        price: 2750,
-        currency: "GH₵",
-        discountNote: "Most popular for UG Legon, UPSA & ATU Students",
-        features: [
-          "Full 6-Week student driving course",
-          "Campus pickup & drop-off included",
-          "DVLA Biometrics & Theory Test prep",
-          "Official Ghanaian Driver's License facilitation",
-          "Start with 70% (GH₵ 1,925) deposit"
+          "Manual transmission (Standard: GH₵ 1,720) or Automatic/AC (Comfort: GH₵ 2,220)",
+          "Theory Lessons: 9:00am - 10:00am or 1:00pm - 2:00pm",
+          "Comprehensive practical behind-the-wheel instruction",
+          "Start with 70% down payment, balance before DVLA test",
+          "Dual-pedal safety vehicles with certified instructors"
         ],
         popular: true
       },
       {
-        id: "stu-exp-std-lic",
-        name: "Student Express + License",
-        category: "Student / NSS Special",
+        id: "intensive-course",
+        name: "Intensive Course",
         duration: "3 Weeks",
-        sessions: "Vacation Intensive + Full License",
-        price: 3150,
+        theoryTime: "9:00 AM – 10:00 AM or 1:00 PM – 2:00 PM",
+        practical: "Daily Intensive Practical Lessons",
+        amountStandard: 2100,
+        amountComfort: 2600,
         currency: "GH₵",
-        discountNote: "Perfect during semester breaks",
         features: [
-          "Finish entire course in 3 weeks",
-          "Intensive everyday driving sessions",
-          "Full DVLA license registration & test",
-          "Campus pickup from University gates"
+          "Fast-track everyday intensive driving instruction",
+          "Standard: GH₵ 2,100 | Comfort: GH₵ 2,600",
+          "Theory Lessons: 9:00am - 10:00am or 1:00pm - 2:00pm",
+          "Ideal for busy professionals, travelers, and vacationers",
+          "70% deposit acceptable to commence immediately"
         ],
         popular: false
       },
       {
-        id: "stu-pol-no-lic",
-        name: "Student Refresher / Polishing",
-        category: "Student / NSS Special",
-        duration: "2 - 3 Weeks",
-        sessions: "8 Intensive Refresher Hours",
-        price: 1600,
+        id: "refresher-course",
+        name: "Brush-Up / Refresher Course",
+        duration: "1 - 2 Weeks",
+        theoryTime: "9:00 AM – 10:00 AM or 1:00 PM – 2:00 PM",
+        practical: "Targeted Confidence & Parking Drills",
+        price1Week: 850,
+        price2Weeks: 1300,
+        assessmentFee: 100,
         currency: "GH₵",
-        discountNote: "Great for students with rusty driving skills",
         features: [
-          "Brush up on Accra traffic navigation",
-          "Master hill starts & roundabout etiquette",
-          "Parallel parking confidence",
-          "Flexible timing"
+          "1 Week option: GH₵ 850.00",
+          "2 Weeks option: GH₵ 1,300.00",
+          "Driving Skills Assessment: GH₵ 100.00",
+          "You must provide your valid license (if necessary)",
+          "Targeted roundabout navigation, highway speed, and tight parking"
         ],
         popular: false
-      }
-    ],
-    licenseOnly: [
-      {
-        id: "lic-facilitation-std",
-        name: "Standard License Facilitation",
-        category: "Licensing Only",
-        duration: "DVLA Standard Timeline",
-        sessions: "Registration + Eye Test + Driving Test",
-        price: 950,
-        currency: "GH₵",
-        features: [
-          "For already competent drivers needing genuine license",
-          "DVLA biometric registration & profile creation",
-          "Eye test scheduling & medical clearance guide",
-          "Computerized theory test booking & practice app",
-          "Pre-test briefing on official DVLA test routes"
-        ],
-        popular: true
       },
       {
-        id: "lic-facilitation-vip",
-        name: "Express VIP License Facilitation",
-        category: "Licensing Only",
-        duration: "Expedited Timeline",
-        sessions: "Fast-Track DVLA Process + Mock Test",
-        price: 1350,
+        id: "weekend-course",
+        name: "Weekend Course",
+        duration: "Saturdays 16 Weeks",
+        theoryTime: "Flexible Saturday Sessions",
+        practical: "Saturday Practical Lessons (Sundays GH₵ 20.00 Optional)",
+        amountStandard: 1720,
+        amountComfort: 2220,
+        sundayOptional: 20,
         currency: "GH₵",
         features: [
-          "Fast-track processing at DVLA 37 / Weija / Tema",
-          "Includes 2 hours complimentary in-traffic mock test",
-          "Driving school car provided for your DVLA practical test",
-          "Dedicated officer accompaniment",
-          "Instant result verification"
+          "Designed specifically for working individuals and students",
+          "Standard: GH₵ 1,720 | Comfort: GH₵ 2,220",
+          "Comprehensive Saturday practical + theory training across 16 weeks",
+          "Sunday practice sessions available at GH₵ 20.00 (Optional)",
+          "Start with 70% deposit"
         ],
         popular: false
       }

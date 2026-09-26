@@ -145,19 +145,23 @@
           <i class="fa-solid fa-phone" aria-hidden="true"></i>
           <span>0243 854 314</span>
         </a>
+        <a href="tel:+233555652433" class="top-bar-link hide-mobile" aria-label="Call secondary line">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <span>0555 652 433</span>
+        </a>
         <a href="https://wa.me/233243854314" class="top-bar-link" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
           <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
           <span>WhatsApp Desk</span>
         </a>
         <span class="top-bar-item hide-mobile">
           <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-          <span>Weija DVLA, SSNIT First Floor, Accra</span>
+          <span>INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija</span>
         </span>
       </div>
       <div class="top-bar-right">
         <span class="top-bar-item">
           <i class="fa-solid fa-clock" aria-hidden="true"></i>
-          <span>Mon - Sat: 6:30 AM - 6:30 PM</span>
+          <span>Mon - Sat: 8:00 AM - 5:00 PM</span>
         </span>
       </div>
     </div>
@@ -223,8 +227,9 @@
           <i class="fa-brands fa-whatsapp"></i>
           <span>Chat on WhatsApp</span>
         </button>
-        <div style="font-size: 0.85rem; color: var(--color-text-muted); text-align: center; margin-top: 0.5rem;">
-          <i class="fa-solid fa-location-dot" style="color: var(--color-accent);"></i> Weija DVLA, SSNIT First Floor, Accra
+        <div style="font-size: 0.85rem; color: var(--color-text-muted); text-align: center; margin-top: 0.5rem; line-height: 1.4;">
+          <i class="fa-solid fa-location-dot" style="color: var(--color-accent);"></i> INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija, Accra<br>
+          <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-body);"><i class="fa-solid fa-phone" style="color: var(--color-primary);"></i> 0243 854 314 / 0555 652 433</span>
         </div>
       </div>
     </div>
