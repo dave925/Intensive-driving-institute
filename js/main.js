@@ -214,6 +214,20 @@
         }
       });
     });
+
+    // Dynamically calculate height for pre-expanded accordion items
+    const activeItems = document.querySelectorAll('.accordion-item.active .accordion-content');
+    activeItems.forEach(content => {
+      content.style.maxHeight = content.scrollHeight + 'px';
+    });
+
+    // Re-adjust heights on screen resize / orientation change
+    window.addEventListener('resize', function () {
+      const openContents = document.querySelectorAll('.accordion-item.active .accordion-content');
+      openContents.forEach(content => {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      });
+    });
   }
 
   /**

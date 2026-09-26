@@ -58,9 +58,9 @@
                 <p>
                   Weija DVLA, SSNIT First Floor, Accra, Ghana.
                 </p>
-                <span class="contact-card-link" style="color: var(--color-text-muted);">
-                  <i class="fa-solid fa-landmark"></i> Landmarks: Weija DVLA, SSNIT Office, Mallam-Kasoa Highway
-                </span>
+                <div class="contact-card-subtext">
+                  <i class="fa-solid fa-landmark"></i> <span>Landmarks: Weija DVLA, SSNIT Office, Mallam-Kasoa Highway</span>
+                </div>
               </div>
             </div>
 
@@ -178,8 +178,8 @@
 
               <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
                 <button type="submit" class="btn btn-primary btn-block btn-lg">
-                  <i class="fa-solid fa-paper-plane"></i>
-                  <span>Send Message via WhatsApp / Dispatch</span>
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <span>Send Message via WhatsApp</span>
                 </button>
                 <div style="font-size: 0.8rem; text-align: center; color: var(--color-text-muted);">
                   <i class="fa-solid fa-shield-halved"></i> We respect your privacy. No spam or unsolicited promotions.
@@ -197,8 +197,8 @@
 
 
         <!-- Google Maps Styled Location Card -->
-        <div style="margin-top: 3.5rem; background-color: #FFFFFF; border-radius: var(--radius-xl); border: 1px solid var(--color-border); overflow: hidden; box-shadow: var(--shadow-sm);">
-          <div style="padding: 2rem 2.5rem; border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div class="contact-map-card">
+          <div class="contact-map-header">
             <div>
               <h3 style="font-size: 1.4rem; color: var(--color-primary); margin-bottom: 0.25rem;">Visit Our Training Grounds &amp; Office</h3>
               <p style="color: var(--color-text-muted); font-size: 0.95rem; margin: 0;">Weija DVLA, SSNIT First Floor, Accra, Ghana</p>
@@ -210,13 +210,13 @@
           </div>
 
           <!-- Stylized Visual Map Representation -->
-          <div style="height: 340px; background: linear-gradient(135deg, #0A192F, #162C4E); position: relative; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; padding: 2rem;">
-            <div style="max-width: 500px; z-index: 2;">
-              <div style="width: 64px; height: 64px; background-color: var(--color-accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1.25rem auto; box-shadow: 0 0 25px rgba(217, 71, 50, 0.6);">
+          <div class="contact-map-body">
+            <div class="contact-map-content">
+              <div class="contact-map-pin">
                 <i class="fa-solid fa-location-dot"></i>
               </div>
-              <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 0.5rem;">Intensive Driving Institute - Weija DVLA Hub</h4>
-              <p style="color: var(--color-text-light-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+              <h4 class="contact-map-title">Intensive Driving Institute - Weija DVLA Hub</h4>
+              <p class="contact-map-desc">
                 Conveniently located at Weija DVLA, SSNIT First Floor — right next to the official DVLA testing center for seamless practical training and licensing!
               </p>
               <a href="https://maps.google.com/?q=Weija+DVLA+Accra+Ghana" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
@@ -225,7 +225,7 @@
               </a>
             </div>
             <!-- Decorative Grid Map Lines -->
-            <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none;"></div>
+            <div class="contact-map-gridlines"></div>
           </div>
         </div>
       </div>
@@ -447,21 +447,91 @@
       const contactForm = document.getElementById('contactPageForm');
       const successFeedback = document.getElementById('contactSuccessFeedback');
 
+      function isValidGhanaPhone(phone) {
+        const cleanPhone = phone.replace(/[\s\-()]/g, '');
+        const ghanaPattern = /^(?:\+?233|0)[235][0-9]{8}$/;
+        return ghanaPattern.test(cleanPhone);
+      }
+
+      function setFieldState(input, valid, message) {
+        const group = input.closest('.form-group');
+        if (!group) return;
+        const errorMsg = group.querySelector('.form-error-msg');
+
+        if (!valid) {
+          group.classList.add('has-error');
+          if (errorMsg && message) errorMsg.textContent = message;
+        } else {
+          group.classList.remove('has-error');
+        }
+      }
+
       if (contactForm) {
+        // Auto clear error when user types
+        const inputs = contactForm.querySelectorAll('.form-input, .form-select, .form-textarea');
+        inputs.forEach(input => {
+          input.addEventListener('input', function () {
+            const group = this.closest('.form-group');
+            if (group) group.classList.remove('has-error');
+          });
+        });
+
         contactForm.addEventListener('submit', function (e) {
           e.preventDefault();
 
-          const name = document.getElementById('contactName').value.trim();
-          const phone = document.getElementById('contactPhone').value.trim();
-          const wa = document.getElementById('contactWhatsApp').value.trim() || phone;
-          const email = document.getElementById('contactEmail').value.trim() || 'None provided';
-          const subject = document.getElementById('contactSubject').value;
-          const msg = document.getElementById('contactMessage').value.trim();
+          const nameInput = document.getElementById('contactName');
+          const phoneInput = document.getElementById('contactPhone');
+          const waInput = document.getElementById('contactWhatsApp');
+          const emailInput = document.getElementById('contactEmail');
+          const subjectSelect = document.getElementById('contactSubject');
+          const msgInput = document.getElementById('contactMessage');
 
-          if (!name || !phone || !subject || !msg) {
-            alert('Please fill out all required fields marked with *');
+          let isValid = true;
+
+          // Name validation
+          if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
+            setFieldState(nameInput, false, 'Please enter your full name.');
+            isValid = false;
+          } else {
+            setFieldState(nameInput, true);
+          }
+
+          // Phone validation
+          if (!phoneInput.value.trim() || !isValidGhanaPhone(phoneInput.value)) {
+            setFieldState(phoneInput, false, 'Enter a valid Ghanaian phone number (e.g. 0244123456).');
+            isValid = false;
+          } else {
+            setFieldState(phoneInput, true);
+          }
+
+          // Subject validation
+          if (!subjectSelect.value) {
+            setFieldState(subjectSelect, false, 'Please select an inquiry topic.');
+            isValid = false;
+          } else {
+            setFieldState(subjectSelect, true);
+          }
+
+          // Message validation
+          if (!msgInput.value.trim() || msgInput.value.trim().length < 5) {
+            setFieldState(msgInput, false, 'Please type your message.');
+            isValid = false;
+          } else {
+            setFieldState(msgInput, true);
+          }
+
+          if (!isValid) {
+            const firstError = contactForm.querySelector('.form-group.has-error input, .form-group.has-error select, .form-group.has-error textarea');
+            if (firstError) firstError.focus();
             return;
           }
+
+          const name = nameInput.value.trim();
+          const phone = phoneInput.value.trim();
+          const wa = waInput.value.trim() || phone;
+          const email = emailInput.value.trim() || 'None provided';
+          const subject = subjectSelect.value;
+          const msg = msgInput.value.trim();
 
           const messageText = 
 `📬 *NEW CONTACT FORM INQUIRY*
@@ -482,7 +552,10 @@ _Sent via Intensive Driving Institute Contact Page_`;
             : `https://wa.me/233243854314?text=${encodeURIComponent(messageText)}`;
 
           contactForm.style.display = 'none';
-          if (successFeedback) successFeedback.style.display = 'block';
+          if (successFeedback) {
+            successFeedback.style.display = 'block';
+            successFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
 
           window.open(waUrl, '_blank', 'noopener,noreferrer');
         });
