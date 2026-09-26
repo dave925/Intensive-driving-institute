@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#162C4E"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D94732"/>
+      <stop offset="100%" stop-color="#BF3622"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Shield / Circle Background -->
+  <rect width="64" height="64" rx="16" fill="url(#primaryGrad)"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="#D94732" stroke-width="2" stroke-opacity="0.4"/>
+  
+  <!-- Steering Wheel Ring -->
+  <circle cx="32" cy="32" r="20" fill="none" stroke="url(#accentGrad)" stroke-width="4.5"/>
+  
+  <!-- Steering Wheel Center Hub -->
+  <circle cx="32" cy="32" r="6" fill="#FFFFFF"/>
+  <circle cx="32" cy="32" r="3.5" fill="#0A192F"/>
+  
+  <!-- Spokes -->
+  <!-- Left Spoke -->
+  <line x1="12" y1="32" x2="26" y2="32" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
+  <!-- Right Spoke -->
+  <line x1="38" y1="32" x2="52" y2="32" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
+  <!-- Bottom Spoke -->
+  <line x1="32" y1="38" x2="32" y2="52" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
+</svg>
