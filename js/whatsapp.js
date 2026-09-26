@@ -30,33 +30,31 @@
    */
   function getContextMessage(type, dataset) {
     const schoolName = config.name || "Intensive Driving Institute";
+    const packageName = dataset.packageName || dataset.courseTitle || '';
+    const option = dataset.option || dataset.transmission || '';
+
+    if (packageName && option) {
+      return `Hello ${schoolName}, I would like to enquire about the ${packageName}, ${option} package.`;
+    } else if (packageName) {
+      return `Hello ${schoolName}, I would like to enquire about the ${packageName} package.`;
+    }
 
     switch (type) {
       case 'course': {
-        const courseName = dataset.courseTitle || 'Driving Lessons';
-        const transmission = dataset.transmission || 'Manual/Automatic';
-        return `Hello ${schoolName}! 🚗\n\nI am interested in enrolling in the *${courseName}* (${transmission}).\n\nPlease provide me with available lesson schedules, requirements, and next batch start dates.\n\nThank you!`;
+        const courseName = dataset.courseTitle || 'Regular Course - 1 Month 3 Weeks';
+        const trans = dataset.transmission ? `, ${dataset.transmission}` : '';
+        return `Hello ${schoolName}, I would like to enquire about the ${courseName}${trans} package.`;
       }
 
       case 'pricing': {
-        const packageName = dataset.packageName || 'Driving Package';
-        const price = dataset.packagePrice ? `(GH₵ ${dataset.packagePrice})` : '';
-        return `Hello ${schoolName}! 📋\n\nI would like to sign up for the *${packageName}* ${price}.\n\nCould you kindly confirm the 70% deposit breakdown and available training slots in Accra?\n\nThank you!`;
-      }
-
-      case 'instructor': {
-        const instructorName = dataset.instructorName || 'an instructor';
-        return `Hello ${schoolName}! 👋\n\nI would like to request *${instructorName}* as my primary driving instructor for my lessons. Please let me know their current schedule availability.`;
-      }
-
-      case 'campus': {
-        const campus = dataset.campusName || 'University of Ghana';
-        return `Hello ${schoolName}! 🎓\n\nI am a student/resident near *${campus}* and would like to inquire about your campus pick-up routes and student discount package.`;
+        const pkg = dataset.packageName || 'Regular Course - 1 Month 3 Weeks';
+        const opt = dataset.option ? `, ${dataset.option}` : '';
+        return `Hello ${schoolName}, I would like to enquire about the ${pkg}${opt} package.`;
       }
 
       case 'general':
       default: {
-        return `Hello ${schoolName}! 👋\n\nI would like to book driving lessons. Please provide me with the available packages, prices, and lesson schedules.\n\nThank you!`;
+        return `Hello ${schoolName}, I would like to enquire about your driving courses and available lesson slots.`;
       }
     }
   }
@@ -83,7 +81,7 @@
     // Handle static floating WhatsApp button if present
     const floatingBtn = document.getElementById('floatingWhatsAppBtn');
     if (floatingBtn) {
-      const defaultUrl = buildWhatsAppUrl(config.defaultWhatsAppMessage || "Hello Intensive Driving Institute! I would like to inquire about driving lessons.");
+      const defaultUrl = buildWhatsAppUrl(config.defaultWhatsAppMessage || "Hello Intensive Driving Institute, I would like to enquire about your driving courses and available lesson slots.");
       floatingBtn.setAttribute('href', defaultUrl);
       floatingBtn.setAttribute('target', '_blank');
       floatingBtn.setAttribute('rel', 'noopener noreferrer');

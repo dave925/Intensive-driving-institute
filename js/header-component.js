@@ -17,32 +17,32 @@
       isDropdown: true,
       subItems: [
         {
-          title: 'Regular Learning',
-          href: 'courses.html#beginner',
-          desc: 'Comprehensive 6-week foundational practical & theory training.',
+          title: 'Regular Course',
+          href: 'courses.html#regular',
+          desc: '1 Month 3 Weeks foundational practical & theory training.',
           img: 'assets/images/student-driving-wheel.jpg',
-          alt: 'Regular Learning Course'
+          alt: 'Regular Driving Course'
         },
         {
-          title: 'Express Learning',
-          href: 'courses.html#refresher',
-          desc: 'Intensive 3-week fast-track daily road lessons.',
-          img: 'assets/images/mechanics-inspection.jpg',
-          alt: 'Express Learning Course'
+          title: 'Intensive Course',
+          href: 'courses.html#intensive',
+          desc: '3-week accelerated fast-track daily road lessons.',
+          img: 'assets/images/fleet-magenta-hatchback.jpg',
+          alt: 'Intensive Driving Course'
         },
         {
-          title: 'Polishing / Refresher',
+          title: 'Brush-Up / Refresher',
           href: 'courses.html#refresher',
-          desc: 'Overcome driving hesitation, tight parking & roundabout anxiety.',
+          desc: '1 or 2 weeks confidence polishing for licensed drivers.',
           img: 'assets/images/maintenance-jumper-cables.jpg',
-          alt: 'Polishing and Refresher Lessons'
+          alt: 'Brush-Up and Refresher Lessons'
         },
         {
-          title: 'License Acquisition',
-          href: 'courses.html#licensing',
-          desc: 'Complete DVLA eye test, computer prep & test car rental.',
-          img: 'assets/images/student-license-car.jpg',
-          alt: "Driver's License Acquisition"
+          title: 'Weekend Course',
+          href: 'courses.html#weekend',
+          desc: 'Saturdays 16 weeks structured practical & theory classes.',
+          img: 'assets/images/mechanics-inspection.jpg',
+          alt: 'Weekend Driving Course'
         }
       ]
     },

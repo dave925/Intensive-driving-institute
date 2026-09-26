@@ -13,18 +13,17 @@ const SCHOOL_CONFIG = {
   foundedYear: 2019,
   dvlaAccreditation: "DVLA Certified Driving School #DVLA/TR/ACC-0482",
   
-  // Contact Information (Ghana format - 0243854314 / 0555652433)
+  // Contact Information (Official Flyer: 0243854314 / 0555652433)
   phone: "+233243854314",
+  phoneDisplay: "0243854314",
   phoneSecondary: "+233555652433",
-  phoneDisplay: "0243 854 314",
-  phoneSecondaryDisplay: "0555 652 433",
-  phoneIntl: "+233243854314",
+  phoneSecondaryDisplay: "0555652433",
   contactLines: "0243854314 / 0555652433",
   
-  // WhatsApp Configuration (Digits only with international country code)
+  // WhatsApp Configuration (Official WhatsApp: +233243854314)
   whatsappNumber: "233243854314",
-  whatsappDisplay: "0243 854 314",
-  defaultWhatsAppMessage: "Hello Intensive Driving Institute, I would like to make an inquiry about your driving courses and available lesson slots. Please provide more details.",
+  whatsappDisplay: "+233243854314",
+  defaultWhatsAppMessage: "Hello Intensive Driving Institute, I would like to enquire about your driving courses and available lesson slots.",
   
   // Email & Physical Location (Official flyer: INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija, Off Mallam-Kasoa Road, Accra)
   email: "admissions@intensivedrivinggh.com",
@@ -39,15 +38,14 @@ const SCHOOL_CONFIG = {
     country: "Ghana"
   },
   
-  // Official Working Hours
+  // Working Hours (Official Flyer)
   hours: {
     weekdays: "Monday – Friday: 8:00 AM – 5:00 PM",
     saturdays: "Saturday: 8:00 AM – 5:00 PM",
-    sundays: "Sunday: Practical sessions by appointment (Sunday Course GH₵ 20.00 Optional)",
     theoryClasses: "9:00 AM – 10:00 AM / 1:00 PM – 2:00 PM"
   },
 
-  // Official Requirements for Registration
+  // Requirements for Registration (Official Flyer)
   registrationRequirements: {
     passportPhotos: "1 Passport size picture",
     nationalId: "National ID (Ghana Card) ONLY",
@@ -55,9 +53,9 @@ const SCHOOL_CONFIG = {
     registrationAndPamphletFee: 100
   },
 
-  // Official Policies
+  // Official Policies (Official Flyer)
   policies: {
-    nonRefundable: "Fees paid are not refundable",
+    nonRefundable: "FEES PAID ARE NOT REFUNDABLE",
     fuelIncrementNotice: "The above prices are subject to change should there is any government increment of fuel"
   },
   
@@ -86,8 +84,7 @@ const SCHOOL_CONFIG = {
     facebook: "https://facebook.com/intensivedrivinggh",
     instagram: "https://instagram.com/intensivedrivinggh",
     tiktok: "https://tiktok.com/@intensivedrivinggh",
-    youtube: "https://youtube.com/@intensivedrivinggh",
-    twitter: "https://twitter.com/intensivedriving"
+    youtube: "https://youtube.com/@intensivedrivinggh"
   },
   
   // Official Pricing Structure Matching Official Enquiry Form
@@ -100,16 +97,18 @@ const SCHOOL_CONFIG = {
         name: "Standard License & Eye Test",
         duration: "3 Months",
         fee: 795,
+        currency: "GHc",
         payableAt: "DVLA",
-        description: "Standard processing timeline for genuine DVLA driver's license and mandatory optical evaluation."
+        description: "Students are required to pay at DVLA."
       },
       {
         id: "dvla-premium",
         name: "Premium License & Eye Test",
         duration: "3 Weeks",
         fee: 1055,
+        currency: "GHc",
         payableAt: "DVLA",
-        description: "Expedited processing timeline for accelerated license issuance and eye test."
+        description: "Students are required to pay at DVLA."
       }
     ],
 
@@ -118,134 +117,54 @@ const SCHOOL_CONFIG = {
         id: "regular-course",
         name: "Regular Course",
         duration: "1 Month 3 Weeks",
-        theoryTime: "9:00 AM – 10:00 AM or 1:00 PM – 2:00 PM",
-        practical: "Practical Driving Lessons included",
+        theoryTime: "9am - 10am / 1pm - 2pm",
+        practical: "Practical Lesson included",
         amountStandard: 1720,
         amountComfort: 2220,
-        currency: "GH₵",
-        features: [
-          "Manual transmission (Standard: GH₵ 1,720) or Automatic/AC (Comfort: GH₵ 2,220)",
-          "Theory Lessons: 9:00am - 10:00am or 1:00pm - 2:00pm",
-          "Comprehensive practical behind-the-wheel instruction",
-          "Start with 70% down payment, balance before DVLA test",
-          "Dual-pedal safety vehicles with certified instructors"
-        ],
-        popular: true
+        currency: "GHC",
+        standardLabel: "Standard",
+        comfortLabel: "Comfort / AC"
       },
       {
         id: "intensive-course",
-        name: "Intensive Course",
+        name: "Intensive Course for 3 Weeks",
         duration: "3 Weeks",
-        theoryTime: "9:00 AM – 10:00 AM or 1:00 PM – 2:00 PM",
-        practical: "Daily Intensive Practical Lessons",
+        theoryTime: "9am - 10am / 1pm - 2pm",
+        practical: "Practical Lesson included",
         amountStandard: 2100,
         amountComfort: 2600,
-        currency: "GH₵",
-        features: [
-          "Fast-track everyday intensive driving instruction",
-          "Standard: GH₵ 2,100 | Comfort: GH₵ 2,600",
-          "Theory Lessons: 9:00am - 10:00am or 1:00pm - 2:00pm",
-          "Ideal for busy professionals, travelers, and vacationers",
-          "70% deposit acceptable to commence immediately"
-        ],
-        popular: false
+        currency: "GHC",
+        standardLabel: "Standard",
+        comfortLabel: "Comfort / AC"
       },
       {
         id: "refresher-course",
         name: "Brush-Up / Refresher Course",
         duration: "1 - 2 Weeks",
-        theoryTime: "9:00 AM – 10:00 AM or 1:00 PM – 2:00 PM",
-        practical: "Targeted Confidence & Parking Drills",
+        theoryTime: "9am - 10am / 1pm - 2pm",
+        practical: "Practical Lesson included",
         price1Week: 850,
         price2Weeks: 1300,
         assessmentFee: 100,
-        currency: "GH₵",
-        features: [
-          "1 Week option: GH₵ 850.00",
-          "2 Weeks option: GH₵ 1,300.00",
-          "Driving Skills Assessment: GH₵ 100.00",
-          "You must provide your valid license (if necessary)",
-          "Targeted roundabout navigation, highway speed, and tight parking"
-        ],
-        popular: false
+        currency: "GHC",
+        licenseNote: "You must provide your valid license. (If necessary)"
       },
       {
         id: "weekend-course",
-        name: "Weekend Course",
+        name: "Weekend Course Saturdays 16Wks",
         duration: "Saturdays 16 Weeks",
-        theoryTime: "Flexible Saturday Sessions",
-        practical: "Saturday Practical Lessons (Sundays GH₵ 20.00 Optional)",
+        theoryTime: "Theory Lesson",
+        practical: "Practical Lesson",
         amountStandard: 1720,
         amountComfort: 2220,
         sundayOptional: 20,
-        currency: "GH₵",
-        features: [
-          "Designed specifically for working individuals and students",
-          "Standard: GH₵ 1,720 | Comfort: GH₵ 2,220",
-          "Comprehensive Saturday practical + theory training across 16 weeks",
-          "Sunday practice sessions available at GH₵ 20.00 (Optional)",
-          "Start with 70% deposit"
-        ],
-        popular: false
+        currency: "GHC",
+        standardLabel: "Standard",
+        comfortLabel: "Comfort / AC",
+        sundayNote: "Sundays GHC 20.00 (Optional)"
       }
     ]
-  },
-  
-  // Instructors Roster
-  instructors: [
-    {
-      id: "inst-1",
-      name: "Kwame Mensah",
-      role: "Chief Driving Instructor & Safety Director",
-      experience: "14+ Years Experience",
-      badge: "DVLA Master Instructor #0194",
-      specialization: "Defensive Driving, Manual Transmission & DVLA Route Mastery",
-      bio: "Former DVLA driving examiner consultant with over 14 years of mentoring beginner and nervous drivers. Kwame has a 98.4% first-time test pass record.",
-      rating: 4.9,
-      studentsCount: "1,450+"
-    },
-    {
-      id: "inst-2",
-      name: "Eunice Osei-Bonsu",
-      role: "Senior Automatic & Defensive Driving Coach",
-      experience: "9 Years Experience",
-      badge: "DVLA Certified Grade 'A' #0381",
-      specialization: "Anxiety Management, Automatic Cars & Precision Parking",
-      bio: "Patient and encouraging, Eunice specializes in helping timid first-time learners build unshakeable confidence in Accra's busy roundabouts and highways.",
-      rating: 5.0,
-      studentsCount: "980+"
-    },
-    {
-      id: "inst-3",
-      name: "Emmanuel Addo (Kofi)",
-      role: "Highway & Heavy Vehicle Specialist",
-      experience: "11 Years Experience",
-      badge: "DVLA Certified Professional #0275",
-      specialization: "Motorway Driving, Night Lessons & Hazard Perception",
-      bio: "Emmanuel is passionate about defensive maneuvers, weather-adaptive braking, and navigating high-speed traffic routes including the N1 Highway.",
-      rating: 4.9,
-      studentsCount: "1,120+"
-    },
-    {
-      id: "inst-4",
-      name: "Akua Frimpong",
-      role: "Theory & Student Program Coordinator",
-      experience: "7 Years Experience",
-      badge: "Certified Road Safety Educator",
-      specialization: "Ghana Highway Code, Road Signs & Computerized Test Prep",
-      bio: "Akua ensures students breeze through the DVLA touchscreen computer test with comprehensive interactive quizzes and road sign decoding sessions.",
-      rating: 4.8,
-      studentsCount: "850+"
-    }
-  ],
-  
-  // Real Statistics / Trust Counters
-  stats: [
-    { value: "4,800+", label: "Licensed Graduates" },
-    { value: "98.6%", label: "First-Time DVLA Pass Rate" },
-    { value: "14+", label: "Dual-Control Modern Cars" },
-    { value: "70%", label: "Flexible Down Payment Plan" }
-  ]
+  }
 };
 
 // Export for modern ES modules or attach to global window

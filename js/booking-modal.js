@@ -164,28 +164,18 @@
     const notes = (notesInput && notesInput.value.trim()) ? notesInput.value.trim() : 'None';
 
     const dispatchMessage = 
-`🚗 *NEW LESSON BOOKING REQUEST*
----------------------------------------
-*School:* ${schoolName}
+`Hello ${schoolName}, I would like to enquire about the ${course} (${transmission}).
 
-👤 *Student Details:*
-• *Name:* ${fullName}
-• *Phone:* ${phone}
-• *WhatsApp:* ${waPhone}
-• *Email:* ${email}
+Enquiry Details:
+Name: ${fullName}
+Phone: ${phone}
+WhatsApp: ${waPhone}
+Preferred Location: ${location}
+Preferred Time: ${time}
+Target Start Date: ${date}
+Additional Notes: ${notes}
 
-📚 *Course & Scheduling:*
-• *Course:* ${course}
-• *Transmission:* ${transmission}
-• *Preferred Location:* ${location}
-• *Target Start Date:* ${date}
-• *Preferred Time:* ${time}
-
-📝 *Additional Notes / Requests:*
-${notes}
-
----------------------------------------
-_Sent via ${schoolName} Online Booking Portal_`;
+Sent via ${schoolName} Website`;
 
     const waUrl = window.WhatsAppSystem 
       ? window.WhatsAppSystem.buildUrl(dispatchMessage) 
