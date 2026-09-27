@@ -155,7 +155,7 @@
         </a>
         <span class="top-bar-item hide-mobile">
           <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-          <span>INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija</span>
+          <span>Weija SCC DVLA, Same Building with SSNIT</span>
         </span>
       </div>
       <div class="top-bar-right">
@@ -228,7 +228,7 @@
           <span>Chat on WhatsApp</span>
         </button>
         <div style="font-size: 0.85rem; color: var(--color-text-muted); text-align: center; margin-top: 0.5rem; line-height: 1.4;">
-          <i class="fa-solid fa-location-dot" style="color: var(--color-accent);"></i> INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija, Accra<br>
+          <i class="fa-solid fa-location-dot" style="color: var(--color-accent);"></i> Weija SCC DVLA, Same Building with SSNIT, Accra<br>
           <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-body);"><i class="fa-solid fa-phone" style="color: var(--color-primary);"></i> 0243 854 314 / 0555 652 433</span>
         </div>
       </div>

@@ -25,14 +25,14 @@ const SCHOOL_CONFIG = {
   whatsappDisplay: "+233243854314",
   defaultWhatsAppMessage: "Hello Intensive Driving Institute, I would like to enquire about your driving courses and available lesson slots.",
   
-  // Email & Physical Location (Official flyer: INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija, Off Mallam-Kasoa Road, Accra)
+  // Email & Physical Location (Weija SCC DVLA, Same Building with SSNIT, Accra)
   email: "admissions@intensivedrivinggh.com",
   infoEmail: "info@intensivedrivinggh.com",
   website: "www.intensivedrivinginstitute.com",
   address: {
-    street: "INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija",
+    street: "Weija SCC DVLA, Same Building with SSNIT",
     landmark: "Off Mallam-Kasoa Road, Accra",
-    full: "INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija, Off Mallam-Kasoa Road, Accra",
+    full: "Weija SCC DVLA, Same Building with SSNIT, Accra",
     city: "Accra",
     region: "Greater Accra Region",
     country: "Ghana"
@@ -62,8 +62,8 @@ const SCHOOL_CONFIG = {
   // Strategic Training & Pick-Up Locations (Accra)
   pickupLocations: [
     {
-      name: "GICEL Estates & Weija Hub",
-      description: "Direct walk-in and training hub at INSIDE GICEL Estates BLK A/17 UP STAIRS, New Weija."
+      name: "Weija SCC DVLA Hub",
+      description: "Direct walk-in and training hub at Weija SCC DVLA, Same Building with SSNIT."
     },
     {
       name: "Mallam Junction & McCarthy Hill",
@@ -91,24 +91,24 @@ const SCHOOL_CONFIG = {
   pricing: {
     registrationAndPamphlet: 100,
 
-    dvlaDirectFees: [
+    licensingFees: [
       {
-        id: "dvla-standard",
+        id: "license-standard",
         name: "Standard License & Eye Test",
         duration: "3 Months",
         fee: 795,
         currency: "GHc",
-        payableAt: "DVLA",
-        description: "Students are required to pay at DVLA."
+        payableAt: "Intensive Driving Institute",
+        description: "Payable directly at Intensive Driving Institute."
       },
       {
-        id: "dvla-premium",
+        id: "license-premium",
         name: "Premium License & Eye Test",
         duration: "3 Weeks",
         fee: 1055,
         currency: "GHc",
-        payableAt: "DVLA",
-        description: "Students are required to pay at DVLA."
+        payableAt: "Intensive Driving Institute",
+        description: "Payable directly at Intensive Driving Institute."
       }
     ],
 
@@ -123,7 +123,8 @@ const SCHOOL_CONFIG = {
         amountComfort: 2220,
         currency: "GHC",
         standardLabel: "Standard",
-        comfortLabel: "Comfort / AC"
+        comfortLabel: "Comfort / AC",
+        transmissions: "Manual & Automatic"
       },
       {
         id: "intensive-course",
@@ -135,7 +136,8 @@ const SCHOOL_CONFIG = {
         amountComfort: 2600,
         currency: "GHC",
         standardLabel: "Standard",
-        comfortLabel: "Comfort / AC"
+        comfortLabel: "Comfort / AC",
+        transmissions: "Manual & Automatic"
       },
       {
         id: "refresher-course",
@@ -147,7 +149,8 @@ const SCHOOL_CONFIG = {
         price2Weeks: 1300,
         assessmentFee: 100,
         currency: "GHC",
-        licenseNote: "You must provide your valid license. (If necessary)"
+        licenseNote: "You must provide your valid license. (If necessary)",
+        transmissions: "Manual & Automatic"
       },
       {
         id: "weekend-course",
@@ -157,11 +160,12 @@ const SCHOOL_CONFIG = {
         practical: "Practical Lesson",
         amountStandard: 1720,
         amountComfort: 2220,
-        sundayOptional: 20,
+        sundayOptional: 50,
         currency: "GHC",
         standardLabel: "Standard",
         comfortLabel: "Comfort / AC",
-        sundayNote: "Sundays GHC 20.00 (Optional)"
+        sundayNote: "Sundays GHC 50.00 (Optional)",
+        transmissions: "Manual & Automatic"
       }
     ]
   }
