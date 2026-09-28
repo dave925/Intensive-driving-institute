@@ -9,7 +9,7 @@ const SCHOOL_CONFIG = {
   name: "Intensive Driving Institute",
   shortName: "Intensive Driving",
   slogan: "Drive With Confidence, Master Safety",
-  tagline: "Ghana's Premier DVLA-Accredited Professional Driving Academy",
+  tagline: "Ghana's Premier DVLA-Accredited Professional Driving School",
   foundedYear: 2019,
   dvlaAccreditation: "DVLA Certified Driving School #DVLA/TR/ACC-0482",
   
@@ -135,7 +135,7 @@ const SCHOOL_CONFIG = {
         amountStandard: 2100,
         amountComfort: 2600,
         currency: "GHC",
-        standardLabel: "Standard",
+        standardLabel: "Intensive",
         comfortLabel: "Comfort / AC",
         transmissions: "Manual & Automatic"
       },
