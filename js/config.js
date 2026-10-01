@@ -41,8 +41,8 @@ const SCHOOL_CONFIG = {
   // Working Hours (Official Flyer)
   hours: {
     weekdays: "Monday – Friday: 8:00 AM – 5:00 PM",
-    saturdays: "Saturday: 8:00 AM – 5:00 PM",
-    theoryClasses: "9:00 AM – 10:00 AM / 1:00 PM – 2:00 PM"
+    saturdays: "Saturday: 8:00 AM – 5:00 PM (Practicals Only)",
+    theoryClasses: "9:00 AM – 10:00 AM / 1:00 PM – 2:00 PM (Weekdays)"
   },
 
   // Requirements for Registration (Official Flyer)
@@ -155,16 +155,14 @@ const SCHOOL_CONFIG = {
       {
         id: "weekend-course",
         name: "Weekend Course Saturdays 16Wks",
-        duration: "Saturdays 16 Weeks",
-        theoryTime: "Theory Lesson",
-        practical: "Practical Lesson",
+        duration: "Saturdays 16 Weeks (Practicals Only)",
+        theoryTime: "Weekdays (9am-10am / 1pm-2pm)",
+        practical: "Saturday Practical Lessons Only",
         amountStandard: 1720,
         amountComfort: 2220,
-        sundayOptional: 50,
         currency: "GHC",
-        standardLabel: "Standard",
+        standardLabel: "Weekend",
         comfortLabel: "Comfort / AC",
-        sundayNote: "Sundays GHC 50.00 (Optional)",
         transmissions: "Manual & Automatic"
       }
     ]
